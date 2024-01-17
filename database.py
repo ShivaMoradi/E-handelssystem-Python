@@ -33,3 +33,9 @@ def view_products():
     cursor.execute("create view admin_view as select customer_id from `E-handelSystem`.cart, `E-handelSystem`.customers"
                    " WHERE cart.id= cart_id")
     db.commit()
+
+
+def add_new_customer(name, email, my_products, amount):
+    cursor.execute(f"INSERT INTO customers (name, email, my_products, amount)"
+                   f"VALUES ('{name}', {email}, '{my_products}', {amount})")
+    db.commit()
