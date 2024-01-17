@@ -8,8 +8,7 @@ class AllProducts:
         self.inventory = inventory
         self.admin_id = admin_id
 
-    @staticmethod
-    def add_new_product(name, price, description, vat, inventory, admin_id):
+    def add_new_product(self, name, price, description, vat, inventory, admin_id):
         run_new = True
         print("Please enter new product")
         while run_new:
@@ -22,8 +21,12 @@ class AllProducts:
             answer = input("Do you want to add another product? (y/n)")
             if answer == "y":
                 'db_E-handel'.add_new_product(name=product_name, price=product_price,
-                                              description=product_description, vat=product_vat, inventory=product_inventory, admin_id=product_admin_id)
+                                              description=product_description, vat=product_vat,
+                                              inventory=product_inventory, admin_id=product_admin_id)
             elif answer == "n":
                 print("Exit")
                 run_new = False
         breakpoint()
+
+
+AllProducts.add_new_product()
